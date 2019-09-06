@@ -1,4 +1,4 @@
-# Nine men's morris - boardgame with C#, XAML and WPF.
+# Nine men's morris - boardgame with C#, XAML and WPF. Made in 2016.
 The game is incomplete, but here are the features that work/are finished: 
 - Board layout
 - Adding buttons on the board
