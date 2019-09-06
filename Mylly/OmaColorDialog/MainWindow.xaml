@@ -1,0 +1,48 @@
+﻿<Window x:Class="OmaColorDialog.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:OmaColorDialog"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="500" WindowStartupLocation="CenterOwner" SizeToContent="WidthAndHeight" MinWidth="500" MinHeight="350">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel VerticalAlignment="Center" Margin="5,5,170,5" Orientation="Horizontal">
+            <Label Name="taustalabel" Content="Taustan väri" Width="90" VerticalAlignment="Center"/>
+            <Button Content="Klikkaa tästä" Name="taustaButton" MinWidth="150" Margin="10" Click="taustaButton_Click" MinHeight="25" />
+        </StackPanel>
+        <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="5,5,170,5">
+            <Label x:Name="pelialuelabel" Content="Pelialueen väri" VerticalAlignment="Center" Width="90"/>
+            <Button Content="Klikkaa tästä" Name="pelialueButton" MinWidth="150" Margin="10" VerticalAlignment="Center" MinHeight="25" Click="pelialueButton_Click"/>
+        </StackPanel>
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel>
+                <Label x:Name="P1" Content="Pelaaja1 nimi" VerticalAlignment="Center" Margin="5" Width="auto" HorizontalAlignment="Left"/>
+                <TextBox x:Name="P1nimi" VerticalAlignment="Top" Margin="5" MinHeight="25" LostFocus="P1nimi_LostFocus"/>
+                <Label x:Name="p1colorlabel" Content="Nappulan väri" Width="90" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                <Button Content="Klikkaa tästä" Name="p1colorbutton" MinWidth="150" Margin="10" Click="nappulaButton1_Click" VerticalAlignment="Center" MinHeight="25"/>
+            </StackPanel>
+            <StackPanel Grid.Column="1">
+                <Label x:Name="P2" Content="Pelaaja2 nimi" VerticalAlignment="Top" Margin="5"/>
+                <TextBox x:Name="P2nimi" VerticalAlignment="Top" Margin="5,5,15,5" MinHeight="25" LostFocus="P2nimi_LostFocus"/>
+                <Label x:Name="p2colorlabel" Content="Nappulan väri" Width="90" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                <Button Content="Klikkaa tästä" Name="p2colorbutton" MinWidth="150" Margin="10" Click="nappulaButton2_Click" VerticalAlignment="Center" MinHeight="25"/>
+            </StackPanel>
+        </Grid>
+        <StackPanel Grid.Row="4" Orientation="Horizontal" FlowDirection="RightToLeft">
+            <Button Name="cancelButton" Content="Cancel" Margin="10,10,5,10" MinHeight="25" MinWidth="70" VerticalAlignment="Center" HorizontalAlignment="Right" IsCancel="True" Click="cancelButton_Click"/>
+            <Button Name="okButton" Content="Ok" Margin="10,10,0,10" MinHeight="25" MinWidth="70" VerticalAlignment="Center" HorizontalAlignment="Right" IsDefault="True" Click="okButton_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>
